@@ -89,3 +89,6 @@ Returns the Y component.
 Sets the vector to new components
 ###Vector2D.normalize()
 Normalizes the current vector (this DOES change the current vector)
+
+#Demo
+Demo that is in the repo uses the browser global style to use the library. This is because it's the most universal style and doesn't require the user to have requirejs or commonjs installed. 
