@@ -10,14 +10,16 @@ define([], function(){
         this.velocity = undefined;
         this.mass = undefined;
         this.radius = undefined;
-        this.positionVector = undefined;
+        this.controlled = false;
     }
     
     //each time updatePosition called, the positions will be incremented by the velocity to attain new position
     Entity.prototype.updatePosition = function(timestep, gravity){
-        this.velocity.set(this.velocity.getX(), this.velocity.getY() + gravity);
-        this.xPos += this.velocity.getX() * timestep;
-        this.yPos += this.velocity.getY() * timestep;
+        if(!this.controlled){
+            this.velocity.set(this.velocity.getX(), this.velocity.getY() + gravity);
+            this.xPos += this.velocity.getX() * timestep;
+            this.yPos += this.velocity.getY() * timestep;
+        }
     }
     
     return Entity;

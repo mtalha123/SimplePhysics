@@ -5,16 +5,65 @@
 		<meta charset="utf-8" />
 		<title> Physics Library Demo </title>
         <style type="text/css" rel="stylesheet">
-            *{
-                margin: 0;
-                padding: 0;
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
+            #container {
+              height: 400px;
+              position: relative;
+              width: 400px;
+            }
+            
+            #menu {
+                bottom: 0;
+                left: 0;
+                top: 40px;
+                position: absolute;
+                width: 100%;
+            }
+            
+            button {
+                display: block;
+                margin: 20px 0px;
+            }
+            
+            #gravity {
+                display: block;
             }
         </style>
+        
+        <script
+          src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous">
+        </script>
+        
+       <script src='Third Party/spectrum.js'></script>
+       <link rel='stylesheet' href='Third Party/spectrum.css' />
 	</head>
 	
 	
-	<body>        
-        <canvas id="canvas" style="display: block;"></canvas>
+	<body>   
+        <div id="container">
+            <canvas id="canvas" style="display: block;"></canvas>
+            <menu id="menu">
+                <input type='text' id="colorpicker" />
+                <form id="formcontrols">
+                    X Postion:<br>
+                    <input type="text" name="firstname" value="200"><br>
+                    Y Position:<br>
+                    <input type="text" name="lastname" value="200"><br>
+                    Radius:<br>
+                    <input type="text" name="firstname" value="40"><br>
+                    Mass:<br>
+                    <input type="text" name="lastname" value="40"><br>
+                    </form>
+                <button type="button" id="addcircle">Add Circle!</button>
+                <input type=button value="Set Gravity!" id="setgravity"><input type="text" value="4" id="gravity">
+            </menu>
+        </div>
+        
         
         <script src="SimplePhysics-min.js"></script>
         <script src="main.js"></script>
